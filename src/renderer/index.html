@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self'; style-src 'self' 'unsafe-inline' https:; font-src https: data:; img-src https: data:; frame-src https: http: file:">
+  <title>Skyline Browser</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="chrome">
+    <div class="tab-strip" id="tab-strip"><button class="new-tab" id="new-tab" title="Жаңа қойынды"><i class="ph ph-plus"></i></button></div>
+    <nav class="toolbar">
+      <div class="toolbar-spacer"></div>
+      <button id="back" class="nav-button" title="Артқа"><i class="ph ph-arrow-left"></i></button>
+      <button id="forward" class="nav-button" title="Алға"><i class="ph ph-arrow-right"></i></button>
+      <button id="reload" class="nav-button" title="Жаңарту"><i class="ph ph-arrow-clockwise"></i></button>
+      <form id="address-form" class="address-form"><i class="ph ph-magnifying-glass"></i><input id="address" autocomplete="off" spellcheck="false" placeholder="Іздеу немесе мекенжай енгізу"><div id="suggestions" class="suggestions"></div></form>
+      <button id="bookmark" class="nav-button" title="Бетбелгі"><i class="ph ph-star"></i></button>
+      <button id="downloads" class="nav-button" title="Жүктеулер"><i class="ph ph-download-simple"></i></button>
+      <button id="profile" class="profile-button" title="Профиль"><i class="ph ph-user"></i></button>
+      <button id="menu" class="nav-button" title="Мәзір"><i class="ph ph-dots-three-vertical"></i></button>
+    </nav>
+    <div id="bookmark-bar" class="bookmark-bar"></div>
+  </header>
+
+  <aside class="browser-sidebar">
+    <button class="sidebar-brand" data-nav="home"><i class="ph ph-star-four"></i><b>Skyline</b></button>
+    <nav>
+      <button data-nav="home" class="active"><i class="ph ph-house"></i><span>Басты бет</span></button>
+      <button data-nav="search"><i class="ph ph-magnifying-glass"></i><span>Іздеу</span></button>
+      <button data-nav="news"><i class="ph ph-newspaper"></i><span>Жаңалықтар</span></button>
+      <button data-url="https://www.youtube.com"><i class="ph ph-play"></i><span>Көңіл көтеру</span></button>
+      <button data-url="https://unsplash.com"><i class="ph ph-image"></i><span>Суреттер</span></button>
+      <button data-url="https://maps.google.com"><i class="ph ph-map-pin"></i><span>Карталар</span></button>
+      <button data-route="settings"><i class="ph ph-gear"></i><span>Баптаулар</span></button>
+    </nav>
+    <div class="sidebar-greeting">Жақсы күн<br>алдыңда!<i class="ph ph-sun"></i></div>
+  </aside>
+
+  <main id="pages" class="pages"></main>
+  <aside id="app-menu" class="app-menu hidden"><button data-command="new-tab"><span><i class="ph ph-plus"></i> Жаңа қойынды</span><kbd>Ctrl+T</kbd></button><button data-command="private"><span><i class="ph ph-mask-happy"></i> Жасырын терезе</span></button><hr><button data-route="history"><span><i class="ph ph-clock-counter-clockwise"></i> Тарих</span></button><button data-route="bookmarks"><span><i class="ph ph-star"></i> Бетбелгілер</span></button><button data-route="downloads"><span><i class="ph ph-download-simple"></i> Жүктеулер</span></button><button data-route="settings"><span><i class="ph ph-gear"></i> Баптаулар</span></button><hr><button data-command="devtools"><span><i class="ph ph-code"></i> Әзірлеуші құралдары</span></button></aside>
+  <template id="tab-template"><div class="tab"><i class="ph ph-globe tab-icon"></i><span class="tab-title">Жаңа қойынды</span><span class="tab-status"></span><button class="close-tab" title="Жабу"><i class="ph ph-x"></i></button></div></template>
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+website/node_modules/
+
+# Build outputs
+release/
+dist/
+website/downloads/
+
+# Hosting state and local secrets
+.vercel/
+website/.vercel/
+.env
+.env.*
+!.env.example
+
+# Local captures and logs
+skyline-current.png
+skyline-final.png
+skyline-unified.png
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

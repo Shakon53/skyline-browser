@@ -1,0 +1,13 @@
+{
+  "name": "skyline-browser-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "serve .",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4",
+    "vercel": "^48.1.6"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "custom-browser",
+  "version": "0.1.0",
+  "productName": "Skyline Browser",
+  "private": true,
+  "description": "A customizable Electron browser shell",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "kz.skyline.browser",
+    "productName": "Skyline Browser",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Skyline Browser",
+      "artifactName": "Skyline-Browser-Setup-${version}.${ext}"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.installer-button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 21px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--deep);
+  text-align: left;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.installer-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+}
+
+.installer-button > i { color: var(--blue); font-size: 28px; }
+.installer-button span, .installer-button small { display: block; }
+.installer-button small { margin-top: 3px; color: #7588a1; }
